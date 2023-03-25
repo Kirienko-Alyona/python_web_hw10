@@ -1,0 +1,39 @@
+{% extends "app_mysite/base.html" %} 
+{% block content %}
+
+<form action="{% url 'app_mysite:add_author' %}" method="POST">
+  
+  {% csrf_token %}
+  <div class="w-100 p-3">   
+    <div class="row">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-primary">Add author</h2>
+          <div class="mb-3">
+            <label class="form-label">fullname</label>
+            {{form_author.fullname}}
+            <span>{{ form_author.errors.fullname }}</span>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">born date</label>
+            {{form_author.born_date}}
+            {% comment %} <span>{{ form_author.errors.born_date }}</span> {% endcomment %}
+          </div>
+          <div class="mb-3">
+            <label class="form-label">born location</label>
+            {{form_author.born_location}}
+            {% comment %} <span>{{ form_author.errors.born_location }}</span> {% endcomment %}
+          </div>
+          <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">description</label> 
+              {{form_author.description}}
+              <span>{{ form_author.errors.description }}</span>
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>     
+        </div>
+      </div>      
+    </div>
+  </div>
+</form> 
+
+{% endblock %}

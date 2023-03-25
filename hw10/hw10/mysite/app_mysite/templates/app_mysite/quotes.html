@@ -1,0 +1,38 @@
+{% extends "app_mysite/base.html" %}
+
+{% block content %}
+   
+<div class="w-100 p-3">
+    <h2 class="text-primary">Your added quotes</h2>
+    <div class="row">
+
+        {% for quote in quotes %}
+    
+            <div class="card w-100 mb-3">
+                <div class="card-body">
+                    <h5 class="fst-italic">{{quote.quote}}</h5>
+                    <div>
+                        <span>by {{quote.author}}
+                        <a href={{author.fullname}}>about</a>
+                        </span>
+                    </div>
+                    <div>    
+                        <span>Tags: 
+
+                            {% for tag in quote.tags %}
+
+                                <a href='#'>{{ tag }}</a>
+                            
+                            {% endfor %}
+                    
+                        </span>
+                    </div>
+                </div>
+            </div>
+        
+        {% endfor %}
+
+    </div>
+</div> 
+
+{% endblock %}
