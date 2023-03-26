@@ -15,8 +15,8 @@ class Author(models.Model):
 
 class Quote(models.Model):
 
-    tags = models.CharField(unique=False, max_length=100, null=False)
-    author = models.OneToOneField(Author, to_field="id", on_delete=models.CASCADE)
+    tags = models.CharField(unique=False, max_length=100, null=True)
+    author = models.ForeignKey(Author, to_field="id", on_delete=models.CASCADE, unique=False)
     quote = models.TextField(unique=True, null=False)
     
     # def __str__(self):

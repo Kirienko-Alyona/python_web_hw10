@@ -1,4 +1,4 @@
-from django.forms import ModelForm, CharField, ChoiceField, RadioSelect, TextInput, Select
+from django.forms import ModelForm, CharField, ChoiceField, RadioSelect, TextInput, Select, ModelChoiceField
 from .models import Author, Quote
 
 
@@ -26,11 +26,8 @@ class AddAuthorForm(ModelForm):
         
         
 class AddQuoteForm(ModelForm):
-    CHOICES = Author.objects.all()
-    choices_list = list(enumerate(CHOICES, 1))    
-    print(choices_list)           
     quote = CharField(min_length=3, max_length=1500, required=True, widget=TextInput(attrs={"class": "form-control"}))  
-    author = ChoiceField(choices=choices_list, widget=Select(attrs={"class": "form-control"})) 
+    author = ModelChoiceField(queryset=Author.objects.all(), required=True, widget=Select(attrs={"class": "form-control"}))
     tags = CharField(max_length=100, widget=TextInput(attrs={"class": "form-control"}))
     
     class Meta:
