@@ -30,7 +30,9 @@ def add_author(request):
 def add_quote(request):
     form_quote = AddQuoteForm(instance=Quote())
     if request.method == "POST":
-        form_quote = AddQuoteForm(request.POST, instance=Quote()) 
+        my_request = request.POST.dict()
+        my_request["tags"] = my_request["tags"].replace(r",", "").strip().split(" ")
+        form_quote = AddQuoteForm(my_request, instance=Quote()) 
         if form_quote.is_valid():
             form_quote.save() 
             return redirect(to='app_mysite:quotes') 
