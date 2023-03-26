@@ -8,7 +8,7 @@
             "name": "Python: Django",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}\\hw10\\hw10\\mysite\\manage.py",
+            "program": "${workspaceFolder}",
             "args": [
                 "runserver"
             ],
