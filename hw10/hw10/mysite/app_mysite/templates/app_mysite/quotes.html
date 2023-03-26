@@ -20,11 +20,11 @@
                     <div>    
                         <span>Tags: 
 
-                            {% for tag in quote.tags %}
+                            {% comment %} {% for tag in quote.tags %} {% endcomment %}
 
-                                <a href='#'>{{ tag }}</a>
+                                <p><a href='#'>{{ quote.tags }}</a></p>
                             
-                            {% endfor %}
+                            {% comment %} {% endfor %} {% endcomment %}
                     
                         </span>
                     </div>
