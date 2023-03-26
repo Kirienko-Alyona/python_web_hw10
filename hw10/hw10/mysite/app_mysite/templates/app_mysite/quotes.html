@@ -18,17 +18,15 @@
                         </span>
                     </div>
                     <div>    
-                        <div>
-                            <span>Tags: 
+                        <span>Tags: 
 
-                            {% for tag in quote.tags %}
-                            
-                                <button type="button" class="btn btn-outline-primary btn-sm">{{ tag }}</button>
-                            
-                            {% endfor %}
+                        {% for tag in quote.tags %}
                         
-                            </span>
-                        </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm">{{ tag }}</button>
+                        
+                        {% endfor %}
+                    
+                        </span>
                     </div>
                 </div>
             </div>
