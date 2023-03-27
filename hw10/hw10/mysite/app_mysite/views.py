@@ -22,7 +22,6 @@ def authors(request):
 
 @login_required
 def add_author(request):        
-
     form_author = AuthorForm(instance=Author())
     if request.method == "POST":
         form_author = AuthorForm(request.POST, instance=Author()) 

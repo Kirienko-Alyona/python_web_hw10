@@ -1,7 +1,7 @@
 {% extends "app_mysite/base.html" %}
 
 {% block content %}
-<h1>SignUp</h1>
+<h1>SignIn</h1>
 
 <!-- Виводимо Flash сповіщення-->
 {% if messages %}
@@ -36,5 +36,6 @@
         <span>{{form.errors.password}}</span>
     </div>
     <button type="submit" class="btn btn-primary">Sing In</button>
+    <button type="reset" class="btn btn-primary">Reset</button>  
 </form>
 {% endblock %}

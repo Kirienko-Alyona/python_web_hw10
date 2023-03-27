@@ -7,7 +7,6 @@ class AuthorForm(ModelForm):
     
     fullname = CharField(min_length=3, max_length=25, widget=TextInput(attrs={"class": "form-control"}))
     born_date = DateField(widget=DateInput(attrs={"type":"date", "class":"form-control"}))
-    #born_date = CharField(max_length=30, widget=TextInput(attrs={"class": "form-control"}))
     born_location = CharField(max_length=150, widget=TextInput(attrs={"class": "form-control"}))
     description = CharField(max_length=2700, widget=Textarea(attrs={"class": "form-control"}))
     
