@@ -28,6 +28,5 @@ class RegisterView(View):
             username = form.cleaned_data["username"]
             messages.success(request, f'Вітаю {username}. Ваш аккаунт успішно створено')
             return redirect(to="users:login")
-
         return render(request, self.template_name, {"form": form})
     
