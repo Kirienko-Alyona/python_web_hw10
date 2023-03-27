@@ -11,6 +11,6 @@ urlpatterns = [
     path("signup/", RegisterView.as_view(), name='register'),
     path("signin/", LoginView.as_view(template_name='users/signin.html', authentication_form=LoginForm,
                                       redirect_authenticated_user=True), name='login'),
-    path("..", LogoutView.as_view(template_name="app_mysite/quotes.html"), name='logout'),
+    path("logout/", LogoutView.as_view(template_name="app_mysite/quotes.html"), name='logout'),
     #path("..", LogoutView.as_view(template_name="app_mysite/quotes.html"), name='logout'),
 ]

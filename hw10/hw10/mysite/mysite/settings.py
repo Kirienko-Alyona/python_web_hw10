@@ -125,6 +125,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 LOGIN_REDIRECT_URL = '/add_author/'
 LOGIN_URL = '/users/signin'
+LOGOUT_REDIRECT_URL = '/'
 #FAVICON_URL = '/icons/favicon.png'
 
 # Default primary key field type
