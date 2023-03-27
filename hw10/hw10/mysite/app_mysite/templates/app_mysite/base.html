@@ -12,35 +12,37 @@
 
 <main class="container">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <a href="{% url 'app_mysite:quotes' %}"></a>
+        
+        {% if user.is_authenticated %}
+        
         <div class="container-fluid">
-            <a href="{% url 'app_mysite:quotes' %}"></a>
-
-            {% if user.is_authenticated %}
-            
-                <ul class="nav nav-tabs">
-                    <li class="nav-item" role="presentation">
-                        {% if request.get_full_path == "/add_author/" %}
-                        <a class="nav-link active" href="{% url 'app_mysite:add_author' %}">Add author</a>
-                        {% else %}
-                        <a class="nav-link" href="{% url 'app_mysite:add_author' %}">Add author</a>
-                        {% endif %}
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        {% if request.get_full_path == "/add_quote/" %}
-                        <a class="nav-link active" href="{% url 'app_mysite:add_quote' %}">Add quote</a>
-                        {% else %}
-                        <a class="nav-link" href="{% url 'app_mysite:add_quote' %}">Add quote</a>
-                        {% endif %}
-                    </li>
-                </ul>
+            <ul class="nav nav-tabs">
+                <li class="nav-item" role="presentation">
+                    {% if request.get_full_path == "/add_author/" %}
+                    <a class="nav-link active" href="{% url 'app_mysite:add_author' %}">Add author</a>
+                    {% else %}
+                    <a class="nav-link" href="{% url 'app_mysite:add_author' %}">Add author</a>
+                    {% endif %}
+                </li>
+                <li class="nav-item" role="presentation">
+                    {% if request.get_full_path == "/add_quote/" %}
+                    <a class="nav-link active" href="{% url 'app_mysite:add_quote' %}">Add quote</a>
+                    {% else %}
+                    <a class="nav-link" href="{% url 'app_mysite:add_quote' %}">Add quote</a>
+                    {% endif %}
+                </li>
+            </ul>
             <ul class="nav justify-content-end">  
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" href="{% url 'users:logout' %}">Logout</a>
                 </li> 
-            </ul>  
+            </ul> 
+        </div>     
                 
-            {% else %}
-            
+        {% else %}
+        
+        <div>
             <ul class="nav justify-content-end">
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" href="{% url 'users:login' %}">SignIn</a>
@@ -49,10 +51,9 @@
                     <a class="nav-link" href="{% url 'users:register' %}">SignUp</a>
                 </li>
             </ul>
-
-            {% endif %}
-
         </div>
+        {% endif %}
+
     </nav>      
 
     {% block content %}
