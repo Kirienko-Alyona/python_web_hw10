@@ -70,11 +70,7 @@
                     <a class="nav-link" href="{% url 'users:login' %}">SignIn</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    {% comment %} {% if request.get_full_path == "/SignUp/" %}
-                    <a class="nav-link active" href="#">SignUp</a>
-                    {% else %} {% endcomment %}
                     <a class="nav-link" href="{% url 'users:register' %}">SignUp</a>
-                    {% comment %} {% endif %} {% endcomment %}
                 </li>
             </ul>
 
