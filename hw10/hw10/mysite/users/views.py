@@ -14,7 +14,7 @@ class RegisterView(View):
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect(to="app_instagram:root")
+            return redirect(to="app_mysite:quotes")
         return super(RegisterView, self).dispatch(request, * args, ** kwargs)
 
     def get(self, request):
@@ -30,3 +30,4 @@ class RegisterView(View):
             return redirect(to="users:login")
 
         return render(request, self.template_name, {"form": form})
+    

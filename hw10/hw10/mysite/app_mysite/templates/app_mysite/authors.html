@@ -3,13 +3,13 @@
 {% block content %}
 
 <div class="w-100 p-3">
-    <h2 class="text-primary">Your added authors</h2>
+    <h2 class="text-primary">About author</h2>
     <div class="row">
 
         {% for author in authors %}
 
-            <div class="card w-100 mb-3">
-                <div class="card-body">
+            <div class="w-100 mb-3">
+                <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
                     <h4 class="card-text">{{author.fullname}}</h4>
                         <p><strong>Born: </strong>{{author.born_date}} in {{author.born_location}}</p>
                         <p><strong>Description:</strong></p>
