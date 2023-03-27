@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -9,6 +10,7 @@ class Author(models.Model):
     born_date = models.DateField(unique=False, null=False)
     born_location = models.CharField(unique=False, max_length=500, null=False)
     description = models.TextField(unique=True, max_length=2700, null=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     
     def __str__(self):
         return f"{self.fullname}"
