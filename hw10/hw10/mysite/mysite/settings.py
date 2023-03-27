@@ -125,6 +125,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 LOGIN_REDIRECT_URL = '/add_author/'
 LOGIN_URL = '/users/signin'
+#FAVICON_URL = '/icons/favicon.png'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

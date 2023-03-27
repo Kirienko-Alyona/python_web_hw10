@@ -13,8 +13,8 @@
                     <h5 class="fst-italic">{{quote.quote}}</h5>
                     <div>
                         <span>by 
-                            <small class="text-primary"><small class="fw-bold">{{quote.author}}</small></small>
-                        <a href={{author.fullname}}>about</a>
+                            <small class="text-primary" small class="fw-bold">{{quote.author}}</small>
+                            <a href="{% url 'app_mysite:authors' %}?id={{ quote.author_id }}">about</a>
                         </span>
                     </div>
                     <div>    

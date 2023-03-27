@@ -16,7 +16,10 @@ def quotes(request):
 
 
 def authors(request):
-    authors = Author.objects.all()
+    if request.GET.get("id", ''):
+        authors = Author.objects.all().filter(id=request.GET.get("id", ''))
+    else:
+        authors = Author.objects.all()
     return render(request, 'app_mysite/authors.html', context={'title': 'My Site', 'authors': authors})
 
 
