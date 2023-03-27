@@ -9,7 +9,7 @@ class AddAuthorForm(ModelForm):
     born_date = DateField(widget=DateInput(attrs={"type":"date", "class":"form-control"}))
     #born_date = CharField(max_length=30, widget=TextInput(attrs={"class": "form-control"}))
     born_location = CharField(max_length=150, widget=TextInput(attrs={"class": "form-control"}))
-    description = CharField(max_length=4000, widget=Textarea(attrs={"class": "form-control"}))
+    description = CharField(max_length=2700, widget=Textarea(attrs={"class": "form-control"}))
     
     class Meta:
         model = Author
@@ -19,7 +19,7 @@ class AddAuthorForm(ModelForm):
 class AddQuoteForm(ModelForm):
     quote = CharField(max_length=1500, required=True, widget=TextInput(attrs={"class": "form-control"}))  
     author = ModelChoiceField(queryset=Author.objects.all(), required=True, widget=Select(attrs={"class": "form-control"}))
-    tags = JSONField(max_length=100, required=False, widget=TextInput(attrs={"class": "form-control"}))
+    tags = JSONField(max_length=500, required=False, widget=TextInput(attrs={"class": "form-control"}))
     
     class Meta:
         model = Quote

@@ -31,7 +31,7 @@ def add_quote(request):
     form_quote = AddQuoteForm(instance=Quote())
     if request.method == "POST":
         my_request = request.POST.dict()
-        my_request["tags"] = my_request["tags"].replace(r",", "").strip().split(" ")
+        my_request["tags"] = my_request["tags"].replace(r", ", " ").replace(r",", " ").strip().split(" ")
         form_quote = AddQuoteForm(my_request, instance=Quote()) 
         if form_quote.is_valid():
             form_quote.save() 
