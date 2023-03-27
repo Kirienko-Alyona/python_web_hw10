@@ -40,8 +40,8 @@ psqlCursor      = psqlCon.cursor()
 
 # Name of the table to be deleted
 
-tableName       = "app_mysite_quote"
-#tableName       = "app_mysite_author"
+#tableName       = "app_mysite_quote"
+tableName       = "app_mysite_author"
 
  
 

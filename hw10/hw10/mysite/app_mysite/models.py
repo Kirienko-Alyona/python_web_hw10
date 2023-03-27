@@ -9,7 +9,7 @@ class Author(models.Model):
     fullname = models.CharField(unique=True, max_length=100, null=False)
     born_date = models.DateField(unique=False, null=False)
     born_location = models.CharField(unique=False, max_length=500, null=False)
-    description = models.TextField(unique=True, max_length=2700, null=False)
+    description = models.TextField(unique=True, null=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     
     def __str__(self):

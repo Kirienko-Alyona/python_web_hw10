@@ -13,13 +13,10 @@
 <main class="container">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          
             <a href="{% url 'app_mysite:quotes' %}"></a>
 
             {% if user.is_authenticated %}
-
             
-            {% comment %} <div class="btn-group" role="group"> {% endcomment %}
                 <ul class="nav nav-tabs">
                     <li class="nav-item" role="presentation">
                         {% if request.get_full_path == "/add_author/" %}
@@ -43,25 +40,6 @@
             </ul>  
                 
             {% else %}
-
-            
-            {% comment %} <ul class="nav nav-tabs"> {% endcomment %}
-                {% comment %} <li class="nav-item">
-                    {% if request.get_full_path == "/" %}
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    {% else %}
-                    <a class="nav-link" aria-current="page" href="/">Home</a>
-                    {% endif %}
-                </li> {% endcomment %}
-                    {% comment %} <li class="nav-item">
-                        {% if request.get_full_path == "/quotes/" %}
-                        <a class="nav-link active" href="{% url 'app_mysite:quotes' %}"></a>
-                        {% else %} {% endcomment %}
-            {% comment %} <a class="nav-link" href="{% url 'app_mysite:quotes' %}"></a> {% endcomment %}
-                        {% comment %} {% endif %}
-                    </li>
-                </ul> {% endcomment %}
-              
             
             <ul class="nav justify-content-end">
                 <li class="nav-item" role="presentation">
@@ -76,8 +54,11 @@
 
         </div>
     </nav>      
+
     {% block content %}
+
     {% endblock %}
+    
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
