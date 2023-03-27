@@ -3,7 +3,7 @@ from .models import Author, Quote
 from django.contrib.postgres.fields import ArrayField
         
         
-class AddAuthorForm(ModelForm):
+class AuthorForm(ModelForm):
     
     fullname = CharField(min_length=3, max_length=25, widget=TextInput(attrs={"class": "form-control"}))
     born_date = DateField(widget=DateInput(attrs={"type":"date", "class":"form-control"}))
@@ -16,7 +16,7 @@ class AddAuthorForm(ModelForm):
         fields = ['fullname', 'born_date', 'born_location', 'description']
         
         
-class AddQuoteForm(ModelForm):
+class QuoteForm(ModelForm):
     quote = CharField(max_length=1500, required=True, widget=TextInput(attrs={"class": "form-control"}))  
     author = ModelChoiceField(queryset=Author.objects.all(), required=True, widget=Select(attrs={"class": "form-control"}))
     tags = JSONField(max_length=500, required=False, widget=TextInput(attrs={"class": "form-control"}))
