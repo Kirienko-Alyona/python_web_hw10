@@ -14,33 +14,12 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           
+            <a href="{% url 'app_mysite:quotes' %}"></a>
 
             {% if user.is_authenticated %}
 
-            <div class="btn-group" role="group">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        {% if request.get_full_path == "/" %}
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
-                        {% else %}
-                        <a class="nav-link" aria-current="page" href="/">Home</a>
-                        {% endif %}
-                    </li>
-                    <li class="nav-item">
-                        {% if request.get_full_path == "/quotes/" %}
-                        <a class="nav-link active" href="{% url 'app_mysite:quotes' %}">Quotes</a>
-                        {% else %}
-                        <a class="nav-link" href="{% url 'app_mysite:quotes' %}">Quotes</a>
-                        {% endif %}
-                    </li>
-                    {% comment %} <li class="nav-item" role="presentation">
-                        {% if request.get_full_path == "/authors/" %}
-                        <a class="nav-link active" href="{% url 'app_mysite:authors' %}">Authors</a>
-                        {% else %}
-                        <a class="nav-link" href="{% url 'app_mysite:authors' %}">Authors</a>
-                        {% endif %}
-                    </li> {% endcomment %}
-                </ul>
+            
+            {% comment %} <div class="btn-group" role="group"> {% endcomment %}
                 <ul class="nav nav-tabs">
                     <li class="nav-item" role="presentation">
                         {% if request.get_full_path == "/add_author/" %}
@@ -57,7 +36,6 @@
                         {% endif %}
                     </li>
                 </ul>
-            </div>  
             <ul class="nav justify-content-end">  
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" href="{% url 'users:logout' %}">Logout</a>
@@ -66,31 +44,24 @@
                 
             {% else %}
 
-            <div class="btn-group" role="group">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        {% if request.get_full_path == "/" %}
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
-                        {% else %}
-                        <a class="nav-link" aria-current="page" href="/">Home</a>
-                        {% endif %}
-                    </li>
-                    <li class="nav-item">
+            
+            {% comment %} <ul class="nav nav-tabs"> {% endcomment %}
+                {% comment %} <li class="nav-item">
+                    {% if request.get_full_path == "/" %}
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    {% else %}
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                    {% endif %}
+                </li> {% endcomment %}
+                    {% comment %} <li class="nav-item">
                         {% if request.get_full_path == "/quotes/" %}
-                        <a class="nav-link active" href="{% url 'app_mysite:quotes' %}">Quotes</a>
-                        {% else %}
-                        <a class="nav-link" href="{% url 'app_mysite:quotes' %}">Quotes</a>
-                        {% endif %}
+                        <a class="nav-link active" href="{% url 'app_mysite:quotes' %}"></a>
+                        {% else %} {% endcomment %}
+            {% comment %} <a class="nav-link" href="{% url 'app_mysite:quotes' %}"></a> {% endcomment %}
+                        {% comment %} {% endif %}
                     </li>
-                    {% comment %} <li class="nav-item" role="presentation">
-                        {% if request.get_full_path == "/authors/" %}
-                        <a class="nav-link active" href="{% url 'app_mysite:authors' %}">Authors</a>
-                        {% else %}
-                        <a class="nav-link" href="{% url 'app_mysite:authors' %}">Authors</a>
-                        {% endif %}
-                    </li> {% endcomment %}
-                </ul>
-            </div>    
+                </ul> {% endcomment %}
+              
             
             <ul class="nav justify-content-end">
                 <li class="nav-item" role="presentation">
