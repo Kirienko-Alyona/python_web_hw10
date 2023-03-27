@@ -4,29 +4,10 @@ import psycopg2
 
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
-# from contextlib import contextmanager
-
-# from psycopg2 import connect, Error
-
-
-# @contextmanager
-# def connection():
-#     conn = None
-#     try:
-#         conn = connect(host="localhost", user="postgres", database="postgres",
-#                        password="5678")
-#         yield conn
-#         conn.commit()
-#     except Error as error:
-#         print(error)
-#         conn.rollback()
-#     finally:
-#         if conn is not None:
-#             conn.close()
 
 # Start a PostgreSQL database session
 
-psqlCon         = psycopg2.connect(host="localhost", dbname="postgres", user="postgres", password="5678")
+psqlCon = psycopg2.connect(host="localhost", dbname="postgres", user="postgres", password="5678")
 
 psqlCon.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 
