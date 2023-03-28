@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class Author(models.Model):
 
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     fullname = models.CharField(unique=True, max_length=100)
     born_date = models.DateField(unique=False, null=False)
     born_location = models.CharField(unique=False, max_length=500, null=False)
@@ -19,7 +19,7 @@ class Author(models.Model):
 
 class Quote(models.Model):
 
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     quote = models.TextField(unique=True, null=False)
     author = models.ForeignKey(Author, to_field="id", on_delete=models.CASCADE, unique=False)
     tags = ArrayField(models.CharField(max_length=50), null=False, blank=True, unique=False)
