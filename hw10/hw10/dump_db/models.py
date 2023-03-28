@@ -39,7 +39,7 @@ class Quote(Base):
     __tablename__ = 'app_mysite_quote'
     id = Column(Integer, primary_key=True, autoincrement=True)
     tags = Column(ARRAY(Text))
-    author_id = Column(Integer, ForeignKey('app_mysite_author.id', ondelete='CASCADE') )
+    author_id = Column(Integer, ForeignKey('app_mysite_author.id', ondelete='CASCADE'), default=1)
     quote = Column(Text)
     quote_rel = relationship('Author', backref='app_mysite_quote')
     

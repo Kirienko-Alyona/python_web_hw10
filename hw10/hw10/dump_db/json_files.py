@@ -4,7 +4,7 @@ from db import session
 
 
 def load_authors_from_file():
-    with open('authors.json', mode='r') as file:
+    with open('../dump_db/authors.json', mode='r') as file:
         res = file.read()
         data = json.loads(res)
 
@@ -24,7 +24,7 @@ def load_authors_from_file():
 
 
 def load_quotes_from_file():
-    with open('quotes.json', 'r') as file:
+    with open('../dump_db/quotes.json', 'r') as file:
         res = file.read()
         data = json.loads(res)
 
@@ -52,5 +52,5 @@ def load_quotes_from_file():
 
 if __name__ == '__main__':
 
-    #load_authors_from_file()
+    load_authors_from_file()
     load_quotes_from_file()

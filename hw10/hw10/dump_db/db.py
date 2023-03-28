@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 config = configparser.RawConfigParser()
-config.read("./config.ini")
+config.read("../dump_db/config.ini")
 username = config.get("DB", "username")
 password = config.get("DB", "password")
 db_name = config.get("DB", "db_name")

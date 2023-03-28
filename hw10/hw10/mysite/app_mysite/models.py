@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class Author(models.Model):
 
     id = models.IntegerField(primary_key=True)
-    fullname = models.CharField(unique=False, max_length=100)
+    fullname = models.CharField(unique=True, max_length=100)
     born_date = models.DateField(unique=False, null=False)
     born_location = models.CharField(unique=False, max_length=500, null=False)
     description = models.TextField(unique=True, null=False)
