@@ -22,6 +22,9 @@ def authors(request):
         authors = Author.objects.all()
     return render(request, 'app_mysite/authors.html', context={'title': 'My Site', 'authors': authors})
 
+def tags(request):
+    pass
+
 
 @login_required
 def add_author(request):        
