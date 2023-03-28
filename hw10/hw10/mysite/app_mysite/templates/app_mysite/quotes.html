@@ -1,9 +1,9 @@
 {% extends "app_mysite/base.html" %} 
-
 {% block content %}
 
 <div class="w-75 p-3">
   <h2 class="text-primary">Quotes</h2>
+
   <div class="row">
     {% for quote in quotes %}
 
@@ -25,7 +25,11 @@
           <span
             >Tags: {% for tag in quote.tags %}
 
-            <button
+            <a href="{% url 'app_mysite:tags' %}?tag={{ tag }}" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">
+              {{ tag }}
+            </a>
+
+            {% comment %} <button
               type="button"
               class="btn btn btn-primary btn-sm" disabled
               style="
@@ -36,7 +40,7 @@
               "
             >
               {{ tag }}
-            </button>
+            </button> {% endcomment %}
 
             {% endfor %}
           </span>

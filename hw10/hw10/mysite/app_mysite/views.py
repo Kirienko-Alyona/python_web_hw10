@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 
@@ -23,7 +24,13 @@ def authors(request):
     return render(request, 'app_mysite/authors.html', context={'title': 'My Site', 'authors': authors})
 
 def tags(request):
-    pass
+    search_tag = request.GET.get("tag", '')
+    if search_tag:
+        quotes = Quote.objects.filter(tags__icontains=search_tag)
+    else:
+        quotes = Quote.objects.all()
+        
+    return render(request, 'app_mysite/tags.html', context={'title': 'My Site', 'quotes': quotes})
 
 
 @login_required

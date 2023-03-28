@@ -2,6 +2,76 @@
 
 {% block content %}
 
-
+<div class="w-75 p-3">
+    <h2 class="text-primary">Tags</h2>
+    
+    {% for quote in quotes.iterator %}
+    <div class="row">
+        {% for quote in quotes %}
+    
+        <div class="w-100 mb-3">
+          <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+            <h5 class="fst-italic">{{quote.quote}}</h5>
+            <div>
+              <span
+                >by
+                <small class="text-primary fw-bold" style="font-size: 16px"
+                  >{{quote.author}}</small
+                >
+                <a href="{% url 'app_mysite:authors' %}?id={{ quote.author_id }}"
+                  >(about)</a
+                >
+              </span>
+            </div>
+            <div>
+              <span
+                >Tags: {% for tag in quote.tags %}
+    
+                <a href="{% url 'app_mysite:tags' %}?tag={{ tag }}" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">
+                  {{ tag }}
+                </a>
+    
+                {% comment %} <button
+                  type="button"
+                  class="btn btn btn-primary btn-sm" disabled
+                  style="
+                    --bs-btn-padding-y: 0.04rem;
+                    --bs-btn-padding-x: 0.6rem;
+                    --bs-btn-font-size: 0.888rem;
+                    --bs-btn-border-radius: 0.8rem;
+                  "
+                >
+                  {{ tag }}
+                </button> {% endcomment %}
+    
+                {% endfor %}
+              </span>
+    
+            </div>
+          </div>
+        </div>
+    
+        {% endfor %}
+      </div>
+      <nav aria-label="...">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link">"Previous"
+                    <span aria-hidden="true">←</span>
+                </a>    
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+            <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+      </nav>
+    {% endfor %}
+       
+</div> 
 
 {% endblock %}
