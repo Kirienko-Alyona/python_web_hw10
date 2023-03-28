@@ -25,24 +25,17 @@
           <span
             >Tags: {% for tag in quote.tags %}
 
-            <a href="{% url 'app_mysite:tags' %}?tag={{ tag }}" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">
+            <a href="{% url 'app_mysite:tags' %}?tag={{ tag }}" class="btn btn-outline-primary" role="button" data-bs-toggle="button" aria-pressed="true" style="
+            --bs-btn-padding-y: 0.04rem;
+            --bs-btn-padding-x: 0.6rem;
+            --bs-btn-font-size: 0.888rem;
+            --bs-btn-border-radius: 0.8rem;
+          ">
               {{ tag }}
             </a>
 
-            {% comment %} <button
-              type="button"
-              class="btn btn btn-primary btn-sm" disabled
-              style="
-                --bs-btn-padding-y: 0.04rem;
-                --bs-btn-padding-x: 0.6rem;
-                --bs-btn-font-size: 0.888rem;
-                --bs-btn-border-radius: 0.8rem;
-              "
-            >
-              {{ tag }}
-            </button> {% endcomment %}
-
             {% endfor %}
+
           </span>
 
         </div>
@@ -50,6 +43,7 @@
     </div>
 
     {% endfor %}
+    
   </div>
   <nav aria-label="...">
     <ul class="pagination justify-content-center">
