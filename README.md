@@ -40,3 +40,8 @@ Tables will be created and you solved your problem.. Cheers!!!
 
 якщо помилка  --> django.db.utils.ProgrammingError: relation  already exists
 python manage.py migrate --fake
+
+
+
+django админка http://127.0.0.1:8000/admin/
+my site http://127.0.0.1:8000
