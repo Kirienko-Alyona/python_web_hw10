@@ -1,14 +1,11 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
-#from django.views.generic import TemplateView
 
 from .forms import AuthorForm, QuoteForm
 from .models import Author, Quote
 
 # Create your views here.
 
-# class HomePageView(TemplateView):
-#     template_name = 'quotes.html'
 
 def main(request):
     return render(request, 'app_mysite/index.html', context={'title': 'My Site'})
@@ -33,7 +30,7 @@ def tags(request):
     else:
         quotes = Quote.objects.all()
         
-    return render(request, 'app_mysite/tags.html', context={'title': 'My Site', 'quotes': quotes})
+    return render(request, 'app_mysite/tags.html', context={'title': 'My Site', 'quotes': quotes, 'tag': search_tag})
 
 
 @login_required

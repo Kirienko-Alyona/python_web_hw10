@@ -3,9 +3,9 @@
 {% block content %}
 
 <div class="w-75 p-3">
-    <h2 class="text-primary">Tags</h2>
+    <h2 class="text-primary">Tag: {{tag}}</h2>
     
-    {% for quote in quotes.iterator %}
+ 
     <div class="row">
         {% for quote in quotes %}
     
@@ -48,7 +48,6 @@
 
       </div>
 
-      {% endfor %}
 
       {% comment %} <nav aria-label="...">
         <ul class="pagination justify-content-center">
